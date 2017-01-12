@@ -1,0 +1,16 @@
+{
+    "name": "ace-mode-feelpp",
+    "description": "Feel++ syntax for ace editor",
+    "version": "0.0.1",
+    "engines": {"node": ">= 0.6.0"},
+    "author": "Guillaume Dollé <dev@gdolle.com",
+    "main": "lib/ace",
+    "repository": {
+        "type": "git",
+         "url": "http://github.com/gdolle/ace-mode-feelpp.git"
+    },
+    "licenses": [{
+        "type": "BSD New",
+        "url": "http://opensource.org/licenses/BSD-3-Clause"
+    }]
+}
