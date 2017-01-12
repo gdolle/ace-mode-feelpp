@@ -16,3 +16,6 @@ To test the syntax in a brower, type
 ```
 make serve
 ```
+
+:information_source: To update gitbook-plugin-ace-mode-feelpp, compile and see
+`build/export-gitbook-plugin-ace`
