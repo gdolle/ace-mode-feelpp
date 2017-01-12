@@ -16,7 +16,9 @@ rules=lib/ace/mode/feelpp_highlight_rules.js
 demo=demo/kitchen-sink/docs/feelpp.feelpp
 modelist=lib/ace/ext/modelist.js
 
-all: build
+exportdir=build/export-gitbook-plugin-ace
+
+all: post-build
 
 pre-build:
 	@ln -sf ${PWD}/${snippet} ./ace/${snippet}
@@ -36,8 +38,15 @@ build: pre-build
 	@ln -sf ace/build build 
 	@printf ${buildmsg}
 
+post-build: build
+	@mkdir -p ${exportdir}
+	@mkdir -p ${exportdir}/snippets
+	@cp build/src-min/mode-feelpp.js ${exportdir}/
+	@cp build/src-min/snippets/feelpp.js ${exportdir}/snippets/
+
 serve:
-	printf("Select Feel++ / Feelpp in the browser to check syntax")
+	@printf "Select Feel++ / Feelpp in the browser to check syntax\n"
+	@cd ace; node static.js
 
 clean:
 	@rm -rf ./ace/${snippet}
